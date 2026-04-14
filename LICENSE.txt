@@ -1,0 +1,36 @@
+PROPRIETARY LICENSE
+
+Copyright (c) 2026 Ceralumelabs India (OPC) Private Limited. All rights reserved.
+
+This software and associated documentation files (the "Software") are the
+proprietary property of Ceralumelabs India (OPC) Private Limited and are
+provided solely for educational purposes as part of the PCFS (Professional
+Certificate in Full-Stack Development) course.
+
+RESTRICTIONS
+
+1. NO REDISTRIBUTION: You may not distribute, publish, sublicense, sell, or
+   otherwise transfer this Software or any copies thereof to any third party
+   without prior written consent from Ceralumelabs India (OPC) Private Limited.
+
+2. NO COMMERCIAL USE: This Software may not be used for commercial purposes
+   without explicit written permission from Ceralumelabs India (OPC) Private
+   Limited.
+
+3. NO MODIFICATION FOR DISTRIBUTION: You may not modify and redistribute this
+   Software. Modifications for personal learning purposes are permitted.
+
+4. EDUCATIONAL USE ONLY: This Software is provided exclusively for educational
+   and learning purposes for enrolled students of the PCFS course.
+
+5. NO WARRANTY: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+6. LIMITATION OF LIABILITY: IN NO EVENT SHALL CERALUMELABS INDIA (OPC) PRIVATE
+   LIMITED BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+   ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+   WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For licensing inquiries, please contact:
+Ceralumelabs India (OPC) Private Limited

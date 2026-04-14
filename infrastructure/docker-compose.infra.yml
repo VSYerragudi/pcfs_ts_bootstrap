@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: pg_db
+    env_file:
+      - ../.env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ../data/postgres:/var/lib/postgresql
+
+  mongodb:
+    image: mongo:8.2
+    container_name: mongo_db
+    env_file:
+      - ../.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    volumes:
+      - ../data/mongo:/data/db
+
+  seaweedfs:
+    image: chrislusf/seaweedfs:3.80
+    container_name: seaweedfs
+    env_file:
+      - ../.env
+    ports:
+      - "${SEAWEEDFS_MASTER_PORT:-9333}:9333"
+      - "8080:8080"
+      - "${SEAWEEDFS_FILER_PORT:-8888}:8888"
+      - "${SEAWEEDFS_S3_PORT:-8333}:8333"
+    command: 'server -s3 -filer -volume.max=5 -master.volumeSizeLimitMB=1024'
+    volumes:
+      - ../data/seaweedfs:/data

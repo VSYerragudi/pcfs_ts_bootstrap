@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    /* TypeScript 6 Defaults */
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+
+    /* NestJS Requirements */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    /* Module Settings */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    /* Output */
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+
+    /* Project Structure */
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "incremental": true,
+
+    /* Type Definitions */
+    "lib": ["ES2025"],
+    "types": ["node", "jest"],
+
+    /* Code Quality */
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* TypeScript 6/7 Preparation */
+    "stableTypeOrdering": true,
+
+    /* Performance */
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,54 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    env_file:
+      - ../.env
+    depends_on:
+      - postgres
+      - mongodb
+      - seaweedfs
+    networks:
+      - devnetwork
+
+  postgres:
+    extends:
+      file: ../infrastructure/docker-compose.infra.yml
+      service: postgres
+    env_file:
+      - ../.env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    networks:
+      - devnetwork
+
+  mongodb:
+    extends:
+      file: ../infrastructure/docker-compose.infra.yml
+      service: mongodb
+    env_file:
+      - ../.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    networks:
+      - devnetwork
+
+  seaweedfs:
+    extends:
+      file: ../infrastructure/docker-compose.infra.yml
+      service: seaweedfs
+    env_file:
+      - ../.env
+    networks:
+      - devnetwork
+
+networks:
+  devnetwork:
+    driver: bridge
