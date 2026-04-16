@@ -10,17 +10,22 @@ cd /workspace
 
 # Step 1: Wait for infrastructure services to be ready
 echo ""
-echo "[Step 1/3] Waiting for infrastructure services..."
+echo "[Step 1/4] Waiting for infrastructure services..."
 .devcontainer/scripts/wait-for-services.sh
 
-# Step 2: Build backend (needed for dist/main.js)
+# Step 2: Build shared types (needed by backend)
 echo ""
-echo "[Step 2/3] Building backend..."
+echo "[Step 2/4] Building shared types..."
+npm run build:shared
+
+# Step 3: Build backend (needed for dist/main.js)
+echo ""
+echo "[Step 3/4] Building backend..."
 npm run build:backend
 
-# Step 3: Seed admin user (uses backend bcrypt)
+# Step 4: Seed admin user (uses backend bcrypt)
 echo ""
-echo "[Step 3/3] Checking/seeding admin user..."
+echo "[Step 4/4] Checking/seeding admin user..."
 npx ts-node \
   --project backend/tsconfig.json \
   --require tsconfig-paths/register \
